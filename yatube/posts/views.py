@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Post, Group
 from django.contrib.auth import get_user_model
+from django.conf import settings
 
 User = get_user_model()
 
@@ -9,7 +10,7 @@ def index(request):
     # Одна строка вместо тысячи слов на SQL:
     # в переменную posts будет сохранена выборка из 10 объектов модели Post,
     # отсортированных по полю pub_date по убыванию (от больших зн. к меньшим)
-    posts = Post.objects.order_by("-pub_date")[:10]
+    posts = Post.objects.all()[: settings.POSTS_COUNT]
     # название группы
     title = "Последние обновления на сайте"
     # В словаре context отправляем информацию в шаблон
@@ -27,7 +28,7 @@ def group_posts(request, slug):
     # В нашем случае в переменную group будут переданы объекты модели Group,
     # поле slug у которых соответствует значению slug в запросе
     group = get_object_or_404(Group, slug=slug)
-    posts = Post.objects.order_by("-pub_date")[:10]
+    posts = group.posts.all()[: settings.POSTS_COUNT]
     title = group.__str__
     context = {
         "group": group,

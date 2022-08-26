@@ -1,11 +1,9 @@
 {% extends "base.html" %}
-{% block title %}Здесь будет информация о группах проекта 
-    <span style="color:red">Ya</span>tube {{ group }} 
-    | <span style="color:red">Ya</span>tube {% endblock %}
-{% block header %} Записи сообщества {{ group }} | 
+{% block title %} Записи сообщества {% endblock %}
+{% block header %} {{ group }} | 
     <span style="color:red">Ya</span>tube {% endblock %}
 {% block content %}
-    <h1>{{ group }}</h1>
+    <h2>{{ group }}</h2>
     <p>{{ group.description }}</p>
     {% for post in posts %}
     <h3> Автор: {{ post.author.get_full_name }}, Дата публикации: 

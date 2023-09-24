@@ -3,7 +3,7 @@
 [![CI](https://github.com/yandex-praktikum/hw02_community/actions/workflows/python-app.yml/badge.svg?branch=master)](https://github.com/yandex-praktikum/hw02_community/actions/workflows/python-app.yml)
 
 ## Описание
-Тесты для проекта Yatube
+Шаблоны для проекта Yatube
 
 ### Работа с репозиторим
 1. Клонируем репозиторий на локальный компьютер:

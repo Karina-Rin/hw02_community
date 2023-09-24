@@ -8,7 +8,7 @@
 ### Работа с репозиторим
 1. Клонируем репозиторий на локальный компьютер:
 ```
-https://github.com/Karina-Rin/hw02_community.git
+git clone https://github.com/Karina-Rin/hw02_community.git
 ```
 2. Переносим в него всю папку `/yatube` из предыдущего репозитория.
 3. Переходим в терминале в папку с проектом:
